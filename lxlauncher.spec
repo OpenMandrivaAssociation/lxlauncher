@@ -1,15 +1,19 @@
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:     	lxlauncher
 Version:	0.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
+Patch0:		lxlauncher-0.2-mandriva-customization.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnome-menu-devel
+Buildrequires:	gnome-common
 BuildRequires:	startup-notification-devel
+Requires:	desktop-common-data
+Suggests:	nuoveXT2-icon-theme
 
 %description
 LXLauncher is part of LXDE project. It's designed for Asus EeePC as an
@@ -20,8 +24,10 @@ automatically show up in the launcher, and vice versa for the removed ones.
 
 %prep
 %setup -q
+%patch0 -p1 -b .mdv
 
 %build
+NOCONFIGURE=1 ./autogen.sh
 %configure2_5x
 %make
 
@@ -33,10 +39,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post  
-
-%postun
 
 %files -f %{name}.lang
 %defattr(-, root, root)
