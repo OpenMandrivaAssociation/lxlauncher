@@ -1,7 +1,7 @@
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:     	lxlauncher
 Version:	0.2
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
@@ -11,6 +11,7 @@ Patch1:		lxlauncher-0.2-nocharwrap.patch
 # to be submitted upstream
 Patch2:		lxlauncher-0.2-iconext.patch
 Patch3:		lxlauncher-0.2-sysconf.patch
+Patch4:		lxlauncher-0.2-background.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel
@@ -33,6 +34,7 @@ automatically show up in the launcher, and vice versa for the removed ones.
 %patch1 -p0 -b .charwrap
 %patch2 -p1 -b .iconext
 %patch3 -p1 -b .sysconf
+%patch4 -p1 -b .background
 
 %build
 NOCONFIGURE=1 ./autogen.sh
