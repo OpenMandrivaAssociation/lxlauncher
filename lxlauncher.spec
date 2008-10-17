@@ -12,6 +12,7 @@ Patch1:		lxlauncher-0.2-nocharwrap.patch
 Patch2:		lxlauncher-0.2-iconext.patch
 Patch3:		lxlauncher-0.2-sysconf.patch
 Patch4:		lxlauncher-0.2-background.patch
+Patch5:		lxlauncher-0.2-buttonsize.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel
@@ -35,6 +36,7 @@ automatically show up in the launcher, and vice versa for the removed ones.
 %patch2 -p1 -b .iconext
 %patch3 -p1 -b .sysconf
 %patch4 -p1 -b .background
+%patch5 -p1 -b .buttonsize
 
 %build
 NOCONFIGURE=1 ./autogen.sh
