@@ -1,7 +1,7 @@
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:     	lxlauncher
 Version:	0.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
@@ -14,6 +14,8 @@ Patch3:		lxlauncher-0.2-sysconf.patch
 Patch4:		lxlauncher-0.2-background.patch
 Patch5:		lxlauncher-0.2-buttonsize.patch
 Patch6:		lxlauncher-0.2-vptr.patch
+# (blino) if set, reuse bg_pixmap from main window as tab background
+Patch7:		lxlauncher-0.2-main_bg_pixmap.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel
@@ -39,6 +41,7 @@ automatically show up in the launcher, and vice versa for the removed ones.
 %patch4 -p1 -b .background
 %patch5 -p1 -b .buttonsize
 %patch6 -p1 -b .vptr
+%patch7 -p1 -b .main_bg_pixmap
 
 %build
 NOCONFIGURE=1 ./autogen.sh
