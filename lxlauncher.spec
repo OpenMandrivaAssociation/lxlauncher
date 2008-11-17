@@ -26,6 +26,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libgnome-menu-devel
 Buildrequires:	gnome-common
 BuildRequires:	startup-notification-devel
+BuildRequires:	libGConf2-devel
 Requires:	desktop-common-data
 Suggests:	nuoveXT2-icon-theme
 
