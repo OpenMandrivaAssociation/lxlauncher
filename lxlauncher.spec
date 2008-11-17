@@ -18,6 +18,7 @@ Patch6:		lxlauncher-0.2-vptr.patch
 Patch7:		lxlauncher-0.2-main_bg_pixmap.patch
 Patch8:		lxlauncher-0.2-largeicons.patch
 Patch9:		lxlauncher-0.2-labelname.patch
+Patch10:	lxlauncher-0.2-gconf.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel
@@ -46,6 +47,7 @@ automatically show up in the launcher, and vice versa for the removed ones.
 %patch7 -p1 -b .main_bg_pixmap
 %patch8 -p1 -b .largeicons
 %patch9 -p1 -b .labelname
+%patch10 -p1 -b .gconf
 
 %build
 NOCONFIGURE=1 ./autogen.sh
