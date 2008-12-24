@@ -7,7 +7,6 @@ Release:	%mkrel -c %svn 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-r%svn.tar.bz2
-Patch0:		lxlauncher-0.3-mandriva-customization.patch
 Patch1:		lxlauncher-0.3-nocharwrap.patch
 # fix looking for icon names containing a dot which does not mark an extension, like ooo-writer3.0
 # to be submitted upstream
@@ -41,7 +40,6 @@ automatically show up in the launcher, and vice versa for the removed ones.
 
 %prep
 %setup -q -n %name
-#patch0 -p1 -b .mdv
 %patch1 -p0 -b .charwrap
 %patch2 -p1 -b .iconext
 #patch3 -p1 -b .sysconf
