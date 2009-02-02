@@ -1,4 +1,4 @@
-%define svn 1109
+%define svn 1198
 
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:     	lxlauncher
