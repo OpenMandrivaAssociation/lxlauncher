@@ -52,7 +52,6 @@ automatically show up in the launcher, and vice versa for the removed ones.
 #patch11 -p1 -b .shift_background
 
 %build
-NOCONFIGURE=1 ./autogen.sh
 %configure2_5x
 %make
 
