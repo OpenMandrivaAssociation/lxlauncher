@@ -67,6 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %{_bindir}/%name
-%{_datadir}/%name
 %{_datadir}/desktop-directories/lxde-*.directory
 %{_sysconfdir}/xdg/menus/lxlauncher-applications.menu
