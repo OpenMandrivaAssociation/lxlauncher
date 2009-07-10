@@ -1,13 +1,12 @@
-%define svn 1198
-
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:     	lxlauncher
-Version:	0.3
-Release:	%mkrel -c %svn 1
+Epoch:		1
+Version:	0.2.1
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-r%svn.tar.bz2
-Patch1:		lxlauncher-0.3-nocharwrap.patch
+Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
+Patch1:		lxlauncher-0.2.1-nocharwrap.patch
 # fix looking for icon names containing a dot which does not mark an extension, like ooo-writer3.0
 # to be submitted upstream
 Patch2:		lxlauncher-0.2-iconext.patch
@@ -39,7 +38,7 @@ follows freedesktop.org specs, so newly added applications will
 automatically show up in the launcher, and vice versa for the removed ones.
 
 %prep
-%setup -q -n %name
+%setup -q -n %name-%version
 %patch1 -p0 -b .charwrap
 %patch2 -p1 -b .iconext
 #patch3 -p1 -b .sysconf
