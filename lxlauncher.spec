@@ -69,3 +69,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%name
 %{_datadir}/desktop-directories/lxde-*.directory
 %{_sysconfdir}/xdg/menus/lxlauncher-applications.menu
+%{_sysconfdir}/xdg/lxlauncher
