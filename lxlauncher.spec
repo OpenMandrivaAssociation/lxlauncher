@@ -2,7 +2,7 @@ Summary:	Open source replacement for Asus Launcher of EeePC
 Name:     	lxlauncher
 Epoch:		1
 Version:	0.2.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
@@ -20,6 +20,8 @@ Patch8:		lxlauncher-0.2-largeicons.patch
 Patch9:		lxlauncher-0.2-labelname.patch
 Patch10:	lxlauncher-0.2-gconf.patch
 Patch11:	lxlauncher-0.2-shift_background.patch
+# add patch from upstream to fix segfault with libmenu-cache-3.0
+Patch12:	lxlauncher-0.2.1-fix-segfault.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel
@@ -50,6 +52,7 @@ automatically show up in the launcher, and vice versa for the removed ones.
 #patch9 -p1 -b .labelname
 #patch10 -p1 -b .gconf
 #patch11 -p1 -b .shift_background
+%patch12 -p0 -b .segfault
 
 %build
 %configure2_5x
