@@ -12,7 +12,7 @@ Patch2:		lxlauncher-0.2-iconext.patch
 Patch13:	lxlauncher-0.2.2-gtk.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel intltool
 BuildRequires:	menu-cache-devel
 Buildrequires:	gnome-common
 BuildRequires:	startup-notification-devel
