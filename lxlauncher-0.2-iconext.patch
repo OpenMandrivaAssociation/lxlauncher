@@ -1,0 +1,12 @@
+diff -p -up lxlauncher-0.2/src/misc.c.iconext lxlauncher-0.2/src/misc.c
+--- lxlauncher-0.2/src/misc.c.iconext	2008-06-15 16:09:45.000000000 +0200
++++ lxlauncher-0.2/src/misc.c	2008-09-28 13:59:19.000000000 +0200
+@@ -73,7 +73,7 @@ GdkPixbuf* lxlauncher_load_icon( const c
+                     g_free( icon_name );
+                 }
+             }
+-            else  /* no file extension, it could be an icon name in the icon theme */
++            if (!icon)  /* no file extension, it could be an icon name in the icon theme */
+             {
+                 icon = vfs_load_icon( theme, name, size );
+             }
