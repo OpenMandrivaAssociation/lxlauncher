@@ -11,12 +11,11 @@ Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
 Patch2:		lxlauncher-0.2-iconext.patch
 Patch13:	lxlauncher-0.2.2-gtk.patch
 URL:		http://lxde.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires:	gtk+2-devel intltool
-BuildRequires:	menu-cache-devel
+BuildRequires:	pkgconfig(gtk+-x11-2.0) intltool
+BuildRequires:	pkgconfig(libmenu-cache)
 Buildrequires:	gnome-common
-BuildRequires:	startup-notification-devel
-BuildRequires:	libGConf2-devel
+BuildRequires:	pkgconfig(libstartup-notification-1.0)
+BuildRequires:	pkgconfig(gconf-2.0)
 Requires:	desktop-common-data
 Suggests:	nuoveXT2-icon-theme
 
