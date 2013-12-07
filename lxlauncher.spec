@@ -2,7 +2,7 @@ Summary:	Open source replacement for Asus Launcher of EeePC
 Name:		lxlauncher
 Epoch:		1
 Version:	0.2.2
-Release:	5
+Release:	6
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://lxde.sourceforge.net/
