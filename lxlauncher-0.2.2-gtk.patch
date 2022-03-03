@@ -1,6 +1,6 @@
 index c691434..f48322f 100644 (file)
---- src/exo-wrap-table.c
-+++ src/exo-wrap-table.c
+--- lxlauncher-0.2.5/src/exo-wrap-table.c
++++ lxlauncher-0.2.5/src/exo-wrap-table.c
 @@ -326,14 +326,14 @@ exo_wrap_table_size_request (GtkWidget      *widget,
    if (G_LIKELY (num_children > 0))
      {
