@@ -1,20 +1,31 @@
+# git snapshot
+%global snapshot 1
+%if 0%{?snapshot}
+	%global commit		730d7a816df39589d50ef0dea651f7e265cf45fb
+	%global commitdate	20230917
+	%global shortcommit	%(c=%{commit}; echo ${c:0:7})
+%endif
+
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:		lxlauncher
 Epoch:		1
 Version:	0.2.5
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://lxde.sourceforge.net/
-Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+#Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+Source0:	https://github.com/lxde/%{name}/archive/%{?snapshot:%{commit}}%{!?snapshot:%{version}}/%{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}.tar.gz
 # fix looking for icon names containing a dot which does not mark an extension, like ooo-writer3.0
 # to be submitted upstream
 Patch2:	lxlauncher-0.2-iconext.patch
-#Patch13:	lxlauncher-0.2.2-gtk.patch
+Patch13:	lxlauncher-0.2.2-gtk.patch
 
 Buildrequires:	gnome-common
+BuildRequires:	intltool
+BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gconf-2.0)
-BuildRequires:	pkgconfig(gtk+-x11-2.0) intltool
+#BuildRequires:	pkgconfig(gtk+-x11-2.0)
 BuildRequires:	pkgconfig(libmenu-cache)
 BuildRequires:	pkgconfig(libstartup-notification-1.0)
 
@@ -42,22 +53,22 @@ launcher, and vice versa for the removed ones.
 %{_datadir}/desktop-directories/lxde-*.directory
 %{_sysconfdir}/xdg/menus/lxlauncher-applications.menu
 %{_sysconfdir}/xdg/lxlauncher
-%{_mandir}/man1/%{name}.1.xz
+%{_mandir}/man1/%{name}.1.*
 
 #----------------------------------------------------------------------
 
 %prep
-%setup -q
-%apply_patches
-#% patch2 -p1 -b .iconext
-#% patch13 -p0
+%autosetup -p1 -n %{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}
 
 %build
-%configure2_5x
-%make
+autoreconf -fiv
+%configure \
+	--enable-gtk3 \
+	%{nil}
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # locales
 %find_lang %{name}
