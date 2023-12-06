@@ -23,6 +23,7 @@ Patch13:	lxlauncher-0.2.2-gtk.patch
 
 Buildrequires:	gnome-common
 BuildRequires:	intltool
+BuildRequires:	locales-extra-charsets
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gconf-2.0)
 #BuildRequires:	pkgconfig(gtk+-x11-2.0)
