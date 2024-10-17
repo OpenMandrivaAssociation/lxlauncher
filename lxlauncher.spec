@@ -13,7 +13,7 @@ Version:	0.2.6
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Url:		http://lxde.sourceforge.net/
+Url:		https://lxde.sourceforge.net/
 #Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
 Source0:	https://github.com/lxde/%{name}/archive/%{?snapshot:%{commit}}%{!?snapshot:%{version}}/%{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}.tar.gz
 # fix looking for icon names containing a dot which does not mark an extension, like ooo-writer3.0
