@@ -1,16 +1,15 @@
 # git snapshot
 %global snapshot 1
 %if 0%{?snapshot}
-	%global commit		730d7a816df39589d50ef0dea651f7e265cf45fb
-	%global commitdate	20230917
+	%global commit		983caa8047f79578d65d0126a7d68179858ab373
+	%global commitdate	20240729
 	%global shortcommit	%(c=%{commit}; echo ${c:0:7})
 %endif
 
 Summary:	Open source replacement for Asus Launcher of EeePC
 Name:		lxlauncher
-Epoch:		1
 Version:	0.2.6
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://lxde.sourceforge.net/
