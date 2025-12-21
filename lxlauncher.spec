@@ -20,6 +20,11 @@ Source0:	https://github.com/lxde/%{name}/archive/%{?snapshot:%{commit}}%{!?snaps
 Patch2:	lxlauncher-0.2-iconext.patch
 Patch13:	lxlauncher-0.2.2-gtk.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 Buildrequires:	gnome-common
 BuildRequires:	intltool
 BuildRequires:	locales-extra-charsets
